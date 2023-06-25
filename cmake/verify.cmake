@@ -1,0 +1,26 @@
+macro(c_verify_check name)
+  if (NOT TARGET c-verify-check-target)
+    message(ERROR "c_verify_check not enabled. Enable c_verify_check by calling macro enable_c_verify_check()")
+  endif()
+  add_dependencies(c-verify-check-target ${name})
+endmacro()
+
+macro(c_verify_fix name)
+  if (NOT TARGET c-verify-fix-target)
+    message(ERROR "c_verify_fix not enabled. Enable c_verify_check by calling macro enable_c_verify_fix()")
+  endif()
+  add_dependencies(c-verify-fix-target ${name})
+endmacro()
+
+macro(enable_c_verify_check)
+  add_custom_target(c-verify-check-target)
+endmacro()
+
+macro(enable_c_verify_fix)
+  add_custom_target(c-verify-fix-target)
+endmacro()
+
+macro(enable_c_verify)
+  enable_c_verify_check()
+  enable_c_verify_fix()
+endmacro()

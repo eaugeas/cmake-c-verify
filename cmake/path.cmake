@@ -1,0 +1,17 @@
+macro(c_verify_are_files_present out glob path)
+  file(GLOB result ${path}/${glob})
+  list(LENGTH result nofiles)
+  if (nofiles GREATER 0)
+    set(${out} 1)
+  else()
+    set(${out} 0)
+  endif()
+endmacro()
+
+macro(c_verify_are_header_files_present out path)
+  c_verify_are_files_present(${out} *.h ${path})
+endmacro()
+
+macro(c_verify_are_source_files_present out path)
+  c_verify_are_files_present(${out} *.c ${path})
+endmacro()
