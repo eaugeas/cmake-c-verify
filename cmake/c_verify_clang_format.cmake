@@ -1,5 +1,5 @@
 find_program(CLANG_FORMAT "clang-format")
-if(NOT CLANG_TIDY)
+if(NOT CLANG_FORMAT)
   macro(c_verify_clang_format_check name)
   endmacro()
 
