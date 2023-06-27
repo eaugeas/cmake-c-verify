@@ -25,7 +25,7 @@ if(NOT CLANG_TIDY)
   return()
 endif()
 
-include(${CMAKE_CURRENT_LIST_DIR}/verify.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/c_verify.cmake)
 
 macro(c_verify_clang_tidy_check name)
   add_custom_target(c-verify-clang-tidy-check-${name}-target)

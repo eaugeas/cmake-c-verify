@@ -4,9 +4,9 @@ project(simple)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-include(../../cmake/verify.cmake)
-include(../../cmake/clang_tidy.cmake)
-include(../../cmake/clang_format.cmake)
+include(../../cmake/c_verify.cmake)
+include(../../cmake/c_verify_clang_tidy.cmake)
+include(../../cmake/c_verify_clang_format.cmake)
 
 enable_c_verify()
 enable_c_verify_clang_tidy()
